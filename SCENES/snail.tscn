@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc0upxl0xipa7"]
+[gd_scene load_steps=13 format=3 uid="uid://dc0upxl0xipa7"]
 
+[ext_resource type="Script" path="res://SCRIPTS/snail.gd" id="1_lq6w6"]
 [ext_resource type="Texture2D" uid="uid://bkwevqtgn4oe2" path="res://ASSETS/Art/snail/SnailSpriteSheets.png" id="1_subfa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gwfo0"]
@@ -72,6 +73,7 @@ radius = 50.01
 [node name="Snail" type="StaticBody2D" groups=["Objective"]]
 collision_layer = 8
 collision_mask = 0
+script = ExtResource("1_lq6w6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)

@@ -73,3 +73,4 @@ shape = SubResource("CircleShape2D_x274o")
 
 [connection signal="body_entered" from="AttackRadius" to="." method="_on_attack_radius_body_entered"]
 [connection signal="body_exited" from="AttackRadius" to="." method="_on_attack_radius_body_exited"]
+[connection signal="timeout" from="AttackRadius/AttackTimer" to="." method="_on_attack_timer_timeout"]
