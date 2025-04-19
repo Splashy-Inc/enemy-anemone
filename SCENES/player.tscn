@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c46ovojbc3oqw" path="res://SCENES/blast_attack.tscn" id="4_0migj"]
 [ext_resource type="Texture2D" uid="uid://b24k05xkj5jk6" path="res://ASSETS/Art/blast/Blast.png" id="4_cu67q"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2mxrm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_04nvw"]
 atlas = ExtResource("4_cu67q")
 region = Rect2(1734, 5, 180, 182)
 
@@ -103,9 +103,19 @@ collision_layer = 2
 script = ExtResource("1_y28eq")
 blast_scene = ExtResource("4_0migj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AttackRange" type="TextureProgressBar" parent="."]
 modulate = Color(1, 1, 1, 0.231373)
-texture = SubResource("AtlasTexture_2mxrm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+fill_mode = 4
+texture_progress = SubResource("AtlasTexture_04nvw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_341is")

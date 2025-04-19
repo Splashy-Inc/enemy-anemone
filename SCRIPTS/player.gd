@@ -5,10 +5,12 @@ const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var blast_cooldown: Timer = $BlastCooldown
+@onready var attack_range: TextureProgressBar = $AttackRange
 
 @export var blast_scene: PackedScene
 
 func _physics_process(delta: float) -> void:
+	attack_range.value = blast_cooldown.wait_time - blast_cooldown.time_left
 	var direction := Input.get_vector("left", "right", "up", "down").normalized()
 	if direction:
 		if direction.x < 0:
