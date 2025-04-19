@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqr2narnmng87"]
+
+[ext_resource type="Texture2D" uid="uid://c1l4wfdfxj7w4" path="res://ASSETS/Art/seaweed/seaweed.png" id="1_lr0md"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jl6s"]
+atlas = ExtResource("1_lr0md")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ochm"]
+atlas = ExtResource("1_lr0md")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xjib"]
+atlas = ExtResource("1_lr0md")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0jap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jl6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ochm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xjib")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Seaweed_02" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_c0jap")
+autoplay = "default"
+frame_progress = 0.933023
