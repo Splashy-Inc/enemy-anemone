@@ -226,6 +226,7 @@ position = Vector2(520, 488)
 
 [node name="Clam" parent="GamePieces" instance=ExtResource("6_55bcv")]
 position = Vector2(243, 435)
+is_placed = true
 
 [node name="Pearl" parent="GamePieces" instance=ExtResource("7_12brh")]
 position = Vector2(193, 441)

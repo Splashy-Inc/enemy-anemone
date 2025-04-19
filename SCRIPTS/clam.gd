@@ -1,17 +1,26 @@
 extends CharacterBody2D
 
 @export var target: Node2D
+@export var is_placed = false
+@export var placing_modulate: Color
 
 @onready var attack_timer: Timer = $AttackRadius/AttackTimer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var in_range_targets := []
 
+func _ready() -> void:
+	if is_placed:
+		on_placed()
+	else:
+		modulate = placing_modulate
+
 func _physics_process(delta: float) -> void:
-	if in_range_targets.size() > 0:
-		transform = transform.looking_at(in_range_targets.front().global_position)
-		if attack_timer.is_stopped():
-			animation_player.play("fire_pearl")
+	if is_placed:
+		if in_range_targets.size() > 0:
+			transform = transform.looking_at(in_range_targets.front().global_position)
+			if attack_timer.is_stopped():
+				animation_player.play("fire_pearl")
 
 func _on_attack_range_body_entered(body: Node2D) -> void:
 	if not body in in_range_targets:
@@ -24,3 +33,9 @@ func _on_attack_radius_body_exited(body: Node2D) -> void:
 
 func _fire_pearl():
 	pass
+
+func on_placed():
+	is_placed = true
+	modulate = Color.WHITE
+	$CollisionShape2D.disabled = false
+	$AttackRadius/CollisionShape2D.disabled = false
