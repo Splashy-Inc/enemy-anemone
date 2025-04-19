@@ -1,0 +1,189 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6tdu4r5v8bbs"]
+
+[ext_resource type="Script" path="res://SCRIPTS/controls_screen.gd" id="1_tvbxo"]
+[ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="2_tn6xa"]
+
+[node name="HowToPlayScreen" type="Control"]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+script = ExtResource("1_tvbxo")
+
+[node name="ScreenRows" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 339.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="ScreenTitle" type="BoxContainer" parent="ScreenRows"]
+layout_mode = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="ScreenRows/ScreenTitle"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "How To Play"
+
+[node name="TopicItem" type="VBoxContainer" parent="ScreenRows"]
+layout_mode = 2
+alignment = 1
+
+[node name="TopicTitle" type="Label" parent="ScreenRows/TopicItem"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Goal"
+horizontal_alignment = 1
+
+[node name="TopicItem" type="HBoxContainer" parent="ScreenRows/TopicItem"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ScreenRows/TopicItem/TopicItem"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Describe the game goal here"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayerControl" type="VBoxContainer" parent="ScreenRows"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Title" type="Label" parent="ScreenRows/PlayerControl"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Player Controls"
+horizontal_alignment = 1
+
+[node name="Controls" type="HBoxContainer" parent="ScreenRows/PlayerControl"]
+layout_mode = 2
+
+[node name="SpacerRight" type="Control" parent="ScreenRows/PlayerControl/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlsGrid" type="GridContainer" parent="ScreenRows/PlayerControl/Controls"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="Control1Name" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Key map example"
+
+[node name="Control1Grid" type="GridContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 3
+
+[node name="ControlValue" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control1Grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
+[node name="ControlValue2" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control1Grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_tn6xa")
+text = "W"
+horizontal_alignment = 1
+
+[node name="ControlValue3" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control1Grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
+[node name="ControlValue4" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control1Grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_tn6xa")
+text = "A"
+horizontal_alignment = 1
+
+[node name="ControlValue5" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control1Grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_tn6xa")
+text = "S"
+horizontal_alignment = 1
+
+[node name="ControlValue6" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control1Grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_tn6xa")
+text = "D"
+horizontal_alignment = 1
+
+[node name="Control2Name" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Key press example"
+
+[node name="Control2Button" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
+custom_minimum_size = Vector2(57, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_tn6xa")
+text = "Left Click"
+horizontal_alignment = 1
+
+[node name="Control3Name" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Key combo example"
+
+[node name="Control3Combo" type="HBoxContainer" parent="ScreenRows/PlayerControl/Controls/ControlsGrid"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="ControlButton1" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control3Combo"]
+custom_minimum_size = Vector2(61, 16)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_tn6xa")
+text = "Right Click"
+horizontal_alignment = 1
+
+[node name="Plus" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control3Combo"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_tn6xa")
+text = "+"
+horizontal_alignment = 1
+
+[node name="ControlButton2" type="Label" parent="ScreenRows/PlayerControl/Controls/ControlsGrid/Control3Combo"]
+custom_minimum_size = Vector2(57, 16)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_tn6xa")
+text = "Left Click"
+horizontal_alignment = 1
+
+[node name="SpacerLeft" type="Control" parent="ScreenRows/PlayerControl/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="KeyPressPrompt" type="Label" parent="ScreenRows"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Press any key to exit"
+horizontal_alignment = 1
