@@ -35,3 +35,6 @@ func _on_attack_radius_body_exited(body: Node2D) -> void:
 func _on_attack_timer_timeout() -> void:
 	if target:
 		target.on_hit(1)
+
+func on_hit(damage: int):
+	queue_free()
