@@ -88,7 +88,6 @@ func _on_level_lost():
 
 func _on_level_won():
 	game_ended = true
-	_pause_play()
 	hud.show_win_screen()
 
 func _on_level_selected(new_level_scene: PackedScene):

@@ -1,0 +1,151 @@
+[gd_scene load_steps=14 format=3 uid="uid://bsa1pio43cai0"]
+
+[ext_resource type="Script" path="res://SCRIPTS/clam.gd" id="1_j5dn6"]
+[ext_resource type="Texture2D" uid="uid://dkq5gidklwrqd" path="res://ASSETS/Art/clam/Clam.png" id="1_kwr1j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g78g5"]
+atlas = ExtResource("1_kwr1j")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54s2v"]
+atlas = ExtResource("1_kwr1j")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpt8r"]
+atlas = ExtResource("1_kwr1j")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m767j"]
+atlas = ExtResource("1_kwr1j")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv08b"]
+atlas = ExtResource("1_kwr1j")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cl15a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g78g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54s2v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpt8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m767j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv08b")
+}],
+"loop": false,
+"name": &"fire_pearl",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj5e2"]
+radius = 17.0
+height = 56.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_81owy"]
+radius = 128.0
+
+[sub_resource type="Animation" id="Animation_xp7gq"]
+resource_name = "fire_pearl"
+length = 0.500017
+step = 0.166667
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_fire_pearl"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackRadius/AttackTimer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-1],
+"method": &"start"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"fire_pearl", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"default", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8ic2a"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sc2na"]
+_data = {
+"RESET": SubResource("Animation_8ic2a"),
+"fire_pearl": SubResource("Animation_xp7gq")
+}
+
+[node name="Clam" type="CharacterBody2D"]
+script = ExtResource("1_j5dn6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cl15a")
+animation = &"fire_pearl"
+autoplay = "default"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nj5e2")
+
+[node name="AttackRadius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRadius"]
+shape = SubResource("CircleShape2D_81owy")
+
+[node name="AttackTimer" type="Timer" parent="AttackRadius"]
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sc2na")
+}
+
+[connection signal="body_entered" from="AttackRadius" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRadius" to="." method="_on_attack_radius_body_exited"]
