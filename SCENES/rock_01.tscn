@@ -6,7 +6,7 @@
 radius = 3.0
 height = 56.0
 
-[node name="Rock_01" type="Area2D"]
+[node name="Rock_01" type="StaticBody2D"]
 y_sort_enabled = true
 collision_mask = 2
 
