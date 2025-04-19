@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccum1nvcpad2r"]
+
+[ext_resource type="Texture2D" uid="uid://dlrcuayh8xjhs" path="res://ASSETS/Art/rocks/Rock2.png" id="1_3upt4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vumog"]
+radius = 6.0
+height = 22.0
+
+[node name="Rock_02" type="StaticBody2D"]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_3upt4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-2, -6)
+rotation = 1.57028
+shape = SubResource("CapsuleShape2D_vumog")
