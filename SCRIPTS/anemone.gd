@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal died
+
 @export var speed := 50
 @export var target: Node2D
 
@@ -37,4 +39,6 @@ func _on_attack_timer_timeout() -> void:
 		target.on_hit(1)
 
 func on_hit(damage: int):
+	remove_from_group("Enemy")
+	died.emit()
 	queue_free()
