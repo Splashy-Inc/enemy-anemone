@@ -1,18 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5sceltkboaq0"]
+[gd_scene load_steps=16 format=3 uid="uid://cdjtvgaru7332"]
 
 [ext_resource type="Script" path="res://SCRIPTS/joystick.gd" id="1_s7tu6"]
 [ext_resource type="Texture2D" uid="uid://bsnl2lvtbxral" path="res://ASSETS/Art/joystick/Joystick.png" id="2_dpt66"]
 [ext_resource type="Texture2D" uid="uid://dkujl704yentj" path="res://ASSETS/Art/joystick/JoystickRing.png" id="3_3odyg"]
 [ext_resource type="Script" path="res://SCRIPTS/knob.gd" id="4_toli6"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4yed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoqpf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmnh5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2mqd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u3huu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03l1x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0s0o8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8pum"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7o034"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7be6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvjus"]
+
 [node name="joystick" type="Node2D"]
 script = ExtResource("1_s7tu6")
 
 [node name="Ring" type="Sprite2D" parent="."]
-texture = ExtResource("2_dpt66")
+texture = ExtResource("3_3odyg")
 
 [node name="Knob" type="Sprite2D" parent="."]
-texture = ExtResource("3_3odyg")
+texture = ExtResource("2_dpt66")
 script = ExtResource("4_toli6")
 
 [node name="Button" type="Button" parent="."]
@@ -25,6 +47,17 @@ offset_right = 61.0
 offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g4yed")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hoqpf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hmnh5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_e2mqd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u3huu")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_03l1x")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0s0o8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g8pum")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7o034")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_x7be6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wvjus")
 
 [connection signal="button_down" from="Button" to="Knob" method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="Knob" method="_on_button_button_up"]
