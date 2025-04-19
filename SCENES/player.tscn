@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2juntykrrmxl"]
+
+[ext_resource type="Texture2D" uid="uid://5btihv7hxfxv" path="res://ASSETS/Art/player/SplorshIdle64.png" id="1_5mfno"]
+[ext_resource type="Script" path="res://SCRIPTS/player.gd" id="1_y28eq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y424k"]
+atlas = ExtResource("1_5mfno")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ee5m"]
+atlas = ExtResource("1_5mfno")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0u4s"]
+atlas = ExtResource("1_5mfno")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaj88"]
+atlas = ExtResource("1_5mfno")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp5r5"]
+atlas = ExtResource("1_5mfno")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfdvb"]
+atlas = ExtResource("1_5mfno")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_341is"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y424k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ee5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0u4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaj88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp5r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfdvb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gbnk1"]
+radius = 15.0
+height = 60.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_y28eq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_341is")
+autoplay = "default"
+frame_progress = 0.300019
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_gbnk1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
