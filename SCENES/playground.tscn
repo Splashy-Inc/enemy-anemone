@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=9 format=4 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="PackedScene" uid="uid://c2juntykrrmxl" path="res://SCENES/player.tscn" id="3_p6y3n"]
 [ext_resource type="Texture2D" uid="uid://b4n6irf1jephl" path="res://icon.svg" id="3_vq471"]
 [ext_resource type="PackedScene" uid="uid://dc0upxl0xipa7" path="res://SCENES/snail.tscn" id="4_k2oqr"]
 [ext_resource type="PackedScene" uid="uid://cvu135vv0vgue" path="res://SCENES/anemone.tscn" id="5_4386a"]
+[ext_resource type="PackedScene" uid="uid://bsa1pio43cai0" path="res://SCENES/clam.tscn" id="6_55bcv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qo7oq"]
 texture = ExtResource("3_vq471")
@@ -97,3 +98,6 @@ position = Vector2(520, 488)
 
 [node name="Anemone" parent="GamePieces" instance=ExtResource("5_4386a")]
 position = Vector2(401, 410)
+
+[node name="Clam" parent="GamePieces" instance=ExtResource("6_55bcv")]
+position = Vector2(243, 435)
