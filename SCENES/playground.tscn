@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=17 format=4 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="Texture2D" uid="uid://rb0fuewtvoel" path="res://ASSETS/Art/BGtileset/BackgroundTileset.png" id="2_57ss8"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" path="res://SCENES/rock_02.tscn" id="5_iqihp"]
 [ext_resource type="PackedScene" uid="uid://bsa1pio43cai0" path="res://SCENES/clam.tscn" id="6_55bcv"]
 [ext_resource type="PackedScene" path="res://SCENES/rock_03.tscn" id="6_jfe5b"]
-[ext_resource type="PackedScene" uid="uid://tajnjj2x3pty" path="res://SCENES/pearl.tscn" id="7_12brh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rhkp"]
 texture = ExtResource("2_57ss8")
@@ -256,9 +255,6 @@ position = Vector2(520, 488)
 [node name="Clam" parent="GamePieces" instance=ExtResource("6_55bcv")]
 position = Vector2(243, 435)
 is_placed = true
-
-[node name="Pearl" parent="GamePieces" instance=ExtResource("7_12brh")]
-position = Vector2(193, 441)
 
 [node name="Anemone" parent="GamePieces" instance=ExtResource("5_4386a")]
 position = Vector2(87, 354)

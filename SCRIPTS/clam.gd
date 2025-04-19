@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var target: Node2D
+@export var pearl_scene: PackedScene
 @export var is_placed = false
 @export var placing_modulate: Color
 
@@ -32,7 +32,10 @@ func _on_attack_radius_body_exited(body: Node2D) -> void:
 	in_range_targets.erase(body)
 
 func _fire_pearl():
-	pass
+	var new_pearl = pearl_scene.instantiate()
+	get_parent().add_child(new_pearl)
+	new_pearl.global_position = global_position
+	new_pearl.fire(in_range_targets.front())
 
 func on_placed():
 	is_placed = true
