@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2juntykrrmxl"]
+[gd_scene load_steps=11 format=3 uid="uid://c2juntykrrmxl"]
 
 [ext_resource type="Texture2D" uid="uid://5btihv7hxfxv" path="res://ASSETS/Art/player/SplorshIdle64.png" id="1_5mfno"]
+[ext_resource type="Script" path="res://SCRIPTS/player.gd" id="1_y28eq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y424k"]
 atlas = ExtResource("1_5mfno")
@@ -57,11 +58,12 @@ radius = 15.0
 height = 60.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_y28eq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_341is")
 autoplay = "default"
-frame_progress = 0.558712
+frame_progress = 0.300019
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
