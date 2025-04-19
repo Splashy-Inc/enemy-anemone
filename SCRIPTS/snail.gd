@@ -2,6 +2,8 @@ extends StaticBody2D
 
 signal died
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 @export var max_health := 100
 var cur_health := max_health
 
@@ -15,5 +17,8 @@ func _process(delta: float) -> void:
 
 func on_hit(damage: int):
 	cur_health = clamp(cur_health - damage, 0, max_health)
+	animation_player.play("on_hit")
+	animation_player.seek(0.0)
 	if cur_health <= 0:
 		died.emit()
+	
