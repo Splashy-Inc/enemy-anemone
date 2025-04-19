@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bkwevqtgn4oe2" path="res://ASSETS/Art/snail/SnailSpriteSheets.png" id="4_x27a3"]
 [ext_resource type="Texture2D" uid="uid://5btihv7hxfxv" path="res://ASSETS/Art/player/SplorshIdle64.png" id="5_i5li3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7grm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anejp"]
 texture = ExtResource("2_shsw0")
 0:0/0 = 0
 1:0/0 = 0
@@ -155,7 +155,7 @@ texture = ExtResource("2_shsw0")
 11:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0wmpg"]
-sources/0 = SubResource("TileSetAtlasSource_d7grm")
+sources/0 = SubResource("TileSetAtlasSource_anejp")
 
 [sub_resource type="Animation" id="Animation_ovyea"]
 length = 0.001
