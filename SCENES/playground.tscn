@@ -1,15 +1,14 @@
-
-[gd_scene load_steps=20 format=4 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=19 format=4 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="Texture2D" uid="uid://rb0fuewtvoel" path="res://ASSETS/Art/BGtileset/BackgroundTileset.png" id="2_57ss8"]
 [ext_resource type="PackedScene" uid="uid://c2juntykrrmxl" path="res://SCENES/player.tscn" id="3_p6y3n"]
-[ext_resource type="PackedScene" uid="uid://clj4gjj1hlvt8" path="res://SCENES/seaweed_01.tscn" id="4_5bpgj"]
+[ext_resource type="PackedScene" path="res://SCENES/seaweed_01.tscn" id="4_5bpgj"]
 [ext_resource type="PackedScene" uid="uid://dc0upxl0xipa7" path="res://SCENES/snail.tscn" id="4_k2oqr"]
 [ext_resource type="PackedScene" path="res://SCENES/rock_01.tscn" id="4_n3boa"]
 [ext_resource type="PackedScene" uid="uid://cvu135vv0vgue" path="res://SCENES/anemone.tscn" id="5_4386a"]
 [ext_resource type="PackedScene" path="res://SCENES/rock_02.tscn" id="5_iqihp"]
-[ext_resource type="PackedScene" uid="uid://bqr2narnmng87" path="res://SCENES/seaweed_02.tscn" id="5_l3rsy"]
+[ext_resource type="PackedScene" path="res://SCENES/seaweed_02.tscn" id="5_l3rsy"]
 [ext_resource type="PackedScene" uid="uid://bsa1pio43cai0" path="res://SCENES/clam.tscn" id="6_55bcv"]
 [ext_resource type="PackedScene" path="res://SCENES/rock_03.tscn" id="6_jfe5b"]
 

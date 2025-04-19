@@ -7,6 +7,9 @@ extends Level
 @export var num_enemies := 10
 var num_enemies_to_spawn := num_enemies
 
+func _ready() -> void:
+	num_enemies *= Globals.round
+
 func _on_timer_timeout() -> void:
 	if num_enemies_to_spawn > 0:
 		var new_anemone = anemone_scene.instantiate()
