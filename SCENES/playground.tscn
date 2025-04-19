@@ -230,6 +230,9 @@ position = Vector2(243, 435)
 [node name="Pearl" parent="GamePieces" instance=ExtResource("7_12brh")]
 position = Vector2(193, 441)
 
+[node name="Anemone" parent="GamePieces" instance=ExtResource("5_4386a")]
+position = Vector2(87, 354)
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
