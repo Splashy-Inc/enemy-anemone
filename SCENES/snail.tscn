@@ -69,7 +69,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_75d6t"]
 radius = 50.01
 
-[node name="Snail" type="StaticBody2D"]
+[node name="Snail" type="StaticBody2D" groups=["Objective"]]
+collision_layer = 8
+collision_mask = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)

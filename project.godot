@@ -29,6 +29,10 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
+[global_group]
+
+Objective=""
+
 [gui]
 
 theme/custom_font="res://ASSETS/Font/m5x7.ttf"
@@ -70,6 +74,8 @@ down={
 
 2d_physics/layer_1="Boundary"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Objective"
 
 [physics]
 
