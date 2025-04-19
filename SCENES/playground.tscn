@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=15 format=4 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="Texture2D" uid="uid://rb0fuewtvoel" path="res://ASSETS/Art/BGtileset/BackgroundTileset.png" id="2_57ss8"]
@@ -177,8 +177,15 @@ resource_local_to_scene = true
 a = Vector2(1025, 0)
 b = Vector2(0, 0)
 
+[sub_resource type="Curve2D" id="Curve2D_rpwnk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1025, 0, 0, 0, 0, 0, 1025, 1025, 0, 0, 0, 0, 0, 1025)
+}
+point_count = 3
+
 [node name="Playground" type="Node"]
 script = ExtResource("1_5e8d0")
+anemone_scene = ExtResource("5_4386a")
 
 [node name="Environment" type="Node" parent="."]
 
@@ -202,6 +209,13 @@ shape = SubResource("SegmentShape2D_k42ny")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Environment/Boundary/Wall"]
 shape = SubResource("SegmentShape2D_fsrde")
 
+[node name="Path2D" type="Path2D" parent="Environment/Boundary"]
+curve = SubResource("Curve2D_rpwnk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Environment/Boundary/Path2D"]
+position = Vector2(1025, 0)
+rotation = 1.5708
+
 [node name="GamePieces" type="Node" parent="."]
 
 [node name="Player" parent="GamePieces" instance=ExtResource("3_p6y3n")]
@@ -210,11 +224,13 @@ position = Vector2(321, 497)
 [node name="Snail" parent="GamePieces" instance=ExtResource("4_k2oqr")]
 position = Vector2(520, 488)
 
-[node name="Anemone" parent="GamePieces" instance=ExtResource("5_4386a")]
-position = Vector2(401, 410)
-
 [node name="Clam" parent="GamePieces" instance=ExtResource("6_55bcv")]
 position = Vector2(243, 435)
 
 [node name="Pearl" parent="GamePieces" instance=ExtResource("7_12brh")]
 position = Vector2(193, 441)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
