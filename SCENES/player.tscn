@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://c46ovojbc3oqw" path="res://SCENES/blast_attack.tscn" id="4_0migj"]
 [ext_resource type="Texture2D" uid="uid://b24k05xkj5jk6" path="res://ASSETS/Art/blast/Blast.png" id="4_cu67q"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mxrm"]
+atlas = ExtResource("4_cu67q")
+region = Rect2(1734, 5, 180, 182)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_y424k"]
 atlas = ExtResource("1_5mfno")
 region = Rect2(0, 0, 64, 64)
@@ -93,14 +97,15 @@ animations = [{
 radius = 15.0
 height = 60.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2mxrm"]
-atlas = ExtResource("4_cu67q")
-region = Rect2(1734, 5, 180, 182)
-
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
 collision_layer = 2
 script = ExtResource("1_y28eq")
+blast_scene = ExtResource("4_0migj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.231373)
+texture = SubResource("AtlasTexture_2mxrm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_341is")
@@ -116,8 +121,5 @@ shape = SubResource("CapsuleShape2D_gbnk1")
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="Blast" parent="." instance=ExtResource("4_0migj")]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.231373)
-texture = SubResource("AtlasTexture_2mxrm")
+[node name="BlastCooldown" type="Timer" parent="."]
+one_shot = true
