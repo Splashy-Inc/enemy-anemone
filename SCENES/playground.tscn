@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=14 format=4 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="Texture2D" uid="uid://rb0fuewtvoel" path="res://ASSETS/Art/BGtileset/BackgroundTileset.png" id="2_57ss8"]
@@ -158,6 +158,25 @@ texture = ExtResource("2_57ss8")
 [sub_resource type="TileSet" id="TileSet_xwqiq"]
 sources/2 = SubResource("TileSetAtlasSource_3rhkp")
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dw8fb"]
+resource_local_to_scene = true
+b = Vector2(0, 1025)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w5wpl"]
+resource_local_to_scene = true
+a = Vector2(0, 1025)
+b = Vector2(1025, 1025)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k42ny"]
+resource_local_to_scene = true
+a = Vector2(1025, 1025)
+b = Vector2(1025, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fsrde"]
+resource_local_to_scene = true
+a = Vector2(1025, 0)
+b = Vector2(0, 0)
+
 [node name="Playground" type="Node"]
 script = ExtResource("1_5e8d0")
 
@@ -168,6 +187,20 @@ tile_map_data = PackedByteArray("AAAAAAAAAgAEAAkAAAAAAAEAAgAEAAoAAAAAAAIAAgAEAAs
 tile_set = SubResource("TileSet_xwqiq")
 
 [node name="Boundary" type="Node2D" parent="Environment"]
+
+[node name="Wall" type="StaticBody2D" parent="Environment/Boundary"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Boundary/Wall"]
+shape = SubResource("SegmentShape2D_dw8fb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment/Boundary/Wall"]
+shape = SubResource("SegmentShape2D_w5wpl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Environment/Boundary/Wall"]
+shape = SubResource("SegmentShape2D_k42ny")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Environment/Boundary/Wall"]
+shape = SubResource("SegmentShape2D_fsrde")
 
 [node name="GamePieces" type="Node" parent="."]
 
