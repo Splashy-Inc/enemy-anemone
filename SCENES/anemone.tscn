@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvu135vv0vgue"]
+[gd_scene load_steps=15 format=3 uid="uid://cvu135vv0vgue"]
 
 [ext_resource type="Texture2D" uid="uid://c4xgh52byjoko" path="res://ASSETS/Art/anemone/Anemone.png" id="1_7ndqj"]
 [ext_resource type="Script" path="res://SCRIPTS/anemone.gd" id="1_rgnfp"]
+[ext_resource type="PackedScene" uid="uid://cmiraoyeq5xh6" path="res://SCENES/sfx_manager.tscn" id="3_aruoh"]
+[ext_resource type="AudioStream" uid="uid://c3v1n3ahpcu3a" path="res://ASSETS/Audio/anemone/anenome.ogg" id="4_8m4mh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_avl1i"]
 atlas = ExtResource("1_7ndqj")
@@ -127,6 +129,14 @@ shape = SubResource("CircleShape2D_x274o")
 libraries = {
 "": SubResource("AnimationLibrary_2k6gl")
 }
+
+[node name="SFXManager" parent="." instance=ExtResource("3_aruoh")]
+attenuation = 1.0
+
+[node name="Attacking" type="AudioStreamPlayer2D" parent="SFXManager"]
+stream = ExtResource("4_8m4mh")
+volume_db = -10.0
+pitch_scale = 1.25
 
 [connection signal="body_entered" from="AttackRadius" to="." method="_on_attack_radius_body_entered"]
 [connection signal="body_exited" from="AttackRadius" to="." method="_on_attack_radius_body_exited"]

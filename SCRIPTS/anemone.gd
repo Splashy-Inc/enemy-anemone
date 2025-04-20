@@ -8,6 +8,7 @@ signal died
 @onready var attack_timer: Timer = $AttackRadius/AttackTimer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var sfx_manager: Node2D = $SFXManager
 
 var in_range_targets := []
 var dying = false
@@ -20,10 +21,12 @@ func _physics_process(delta: float) -> void:
 		if direction and not target in in_range_targets:
 			velocity = direction.normalized() * speed
 			attack_timer.stop()
+			sfx_manager.stop()
 		else:
 			if attack_timer.is_stopped():
 				target.on_hit(1)
 				attack_timer.start()
+				sfx_manager.play("Attacking")
 			velocity = Vector2.ZERO
 
 		move_and_slide()
