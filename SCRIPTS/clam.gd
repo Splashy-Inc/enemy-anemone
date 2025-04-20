@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 @onready var attack_timer: Timer = $AttackRadius/AttackTimer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sfx_manager: Node2D = $SFXManager
 
 var in_range_targets := []
 

@@ -1,7 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://c46ovojbc3oqw"]
+[gd_scene load_steps=21 format=3 uid="uid://c46ovojbc3oqw"]
 
 [ext_resource type="Texture2D" uid="uid://b24k05xkj5jk6" path="res://ASSETS/Art/blast/Blast.png" id="1_6o8t5"]
 [ext_resource type="Script" path="res://SCRIPTS/blast_attack.gd" id="1_ldvav"]
+[ext_resource type="PackedScene" uid="uid://cmiraoyeq5xh6" path="res://SCENES/sfx_manager.tscn" id="3_eofgw"]
+[ext_resource type="AudioStream" uid="uid://dymw45esa7jmr" path="res://ASSETS/Audio/blast/cannonblast-bitcrushed.wav" id="4_0t26k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmsoh"]
 atlas = ExtResource("1_6o8t5")
@@ -197,6 +199,20 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1, 1)]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFXManager")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Blast"],
+"method": &"play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_no17j"]
 _data = {
@@ -225,6 +241,12 @@ disabled = true
 libraries = {
 "": SubResource("AnimationLibrary_no17j")
 }
+
+[node name="SFXManager" parent="." instance=ExtResource("3_eofgw")]
+
+[node name="Blast" type="AudioStreamPlayer2D" parent="SFXManager"]
+stream = ExtResource("4_0t26k")
+volume_db = -8.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

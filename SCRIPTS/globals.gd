@@ -6,6 +6,8 @@ var joypad_connected := false
 
 var round = 1
 
+var joystick: JoyStick
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)

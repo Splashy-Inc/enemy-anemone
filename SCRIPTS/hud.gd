@@ -14,6 +14,7 @@ signal main_menu_pressed
 @onready var win_screen: Control = $MenuScreens/WinScreen
 @onready var loss_screen: Control = $MenuScreens/LossScreen
 @onready var pause_menu: Control = $MenuScreens/PauseMenu
+@onready var mobile_controls: Control = $MobileControls
 
 enum Menus {
 	NONE,
@@ -43,11 +44,15 @@ func _clear_menu():
 
 func show_menu_screens():
 	menu_screens.show()
+	if mobile_controls.visible:
+		mobile_controls.hide()
 
 func hide_menu_screens():
 	cur_menu = Menus.NONE
 	_clear_menu()
 	menu_screens.hide()
+	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
+		mobile_controls.show()
 
 func _on_controls_screen_exited():
 	_go_back_screen()

@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://b77mh17y84d50"]
+
+[ext_resource type="Script" path="res://SCRIPTS/mobile_controls.gd" id="1_qatij"]
+[ext_resource type="PackedScene" uid="uid://cdjtvgaru7332" path="res://SCENES/joystick.tscn" id="1_x3fcn"]
+[ext_resource type="Texture2D" uid="uid://5gafi3uh3r8w" path="res://ASSETS/Art/clam/ClamButton.png" id="2_4i6g7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k5r1q"]
+load_path = "res://.godot/imported/BlastButton.png-7b5b75a46b43009e0bbf766d0c07c8a4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwxfs"]
+atlas = SubResource("CompressedTexture2D_k5r1q")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qd50p"]
+load_path = "res://.godot/imported/BlastButton.png-7b5b75a46b43009e0bbf766d0c07c8a4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f7xx"]
+atlas = SubResource("CompressedTexture2D_qd50p")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g55o3"]
+atlas = ExtResource("2_4i6g7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mjog"]
+atlas = ExtResource("2_4i6g7")
+region = Rect2(64, 0, 64, 64)
+
+[node name="MobileControls" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qatij")
+
+[node name="Joystick" parent="." instance=ExtResource("1_x3fcn")]
+position = Vector2(80, 280)
+
+[node name="BlastButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 280.0
+offset_right = 608.0
+offset_bottom = 344.0
+texture_normal = SubResource("AtlasTexture_dwxfs")
+texture_pressed = SubResource("AtlasTexture_8f7xx")
+
+[node name="ClamButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 200.0
+offset_right = 608.0
+offset_bottom = 264.0
+texture_normal = SubResource("AtlasTexture_g55o3")
+texture_pressed = SubResource("AtlasTexture_2mjog")
+
+[connection signal="pressed" from="BlastButton" to="." method="_on_blast_button_pressed"]
+[connection signal="button_down" from="ClamButton" to="." method="_on_clam_button_button_down"]
+[connection signal="button_up" from="ClamButton" to="." method="_on_clam_button_button_up"]
