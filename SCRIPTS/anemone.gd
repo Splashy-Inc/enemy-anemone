@@ -52,8 +52,11 @@ func _on_attack_timer_timeout() -> void:
 
 func on_hit(damage: int):
 	dying = true
-	collision_shape_2d.disabled = true
+	call_deferred("_disable_collision")
 	animation_player.play("die")
+
+func _disable_collision():
+	collision_shape_2d.disabled = true
 
 func _die():
 	remove_from_group("Enemy")
