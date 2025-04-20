@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c2juntykrrmxl"]
+[gd_scene load_steps=27 format=3 uid="uid://c2juntykrrmxl"]
 
 [ext_resource type="Texture2D" uid="uid://5btihv7hxfxv" path="res://ASSETS/Art/player/SplorshIdle64.png" id="1_5mfno"]
 [ext_resource type="Script" path="res://SCRIPTS/player.gd" id="1_y28eq"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cq6w0y5oujq6x" path="res://ASSETS/Art/player/SplorshRun64.png" id="3_n1m0v"]
 [ext_resource type="PackedScene" uid="uid://c46ovojbc3oqw" path="res://SCENES/blast_attack.tscn" id="4_0migj"]
 [ext_resource type="Texture2D" uid="uid://b24k05xkj5jk6" path="res://ASSETS/Art/blast/Blast.png" id="4_cu67q"]
-[ext_resource type="Texture2D" uid="uid://c4xgh52byjoko" path="res://ASSETS/Art/anemone/Anemone.png" id="7_mhs8s"]
 [ext_resource type="PackedScene" uid="uid://cmiraoyeq5xh6" path="res://SCENES/sfx_manager.tscn" id="7_p7rpb"]
 [ext_resource type="AudioStream" uid="uid://bqmvufwr5nweo" path="res://ASSETS/Audio/player/boot_step2.mp3" id="8_4tyxy"]
 
@@ -235,29 +234,6 @@ shape = SubResource("CapsuleShape2D_gbnk1")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
-
-[node name="PauseButton" type="Button" parent="Camera2D"]
-offset_left = -304.0
-offset_top = -167.0
-offset_right = -246.0
-offset_bottom = -136.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "PAUSE"
-
-[node name="Anemone" type="Sprite2D" parent="Camera2D"]
-position = Vector2(290, -152)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_mhs8s")
-hframes = 10
-
-[node name="anemone_label" type="Label" parent="Camera2D"]
-offset_left = 235.0
-offset_top = -165.0
-offset_right = 264.0
-offset_bottom = -139.0
-theme_override_font_sizes/font_size = 32
-text = "99"
 
 [node name="BlastCooldown" type="Timer" parent="."]
 one_shot = true

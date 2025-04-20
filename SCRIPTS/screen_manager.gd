@@ -103,3 +103,6 @@ func _set_level(new_level_scene: PackedScene):
 
 func _on_main_menu_pressed() -> void:
 	show_main_menu()
+
+func _on_hud_pause_pressed() -> void:
+	toggle_pause_menu()
