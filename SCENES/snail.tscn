@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dc0upxl0xipa7"]
+[gd_scene load_steps=24 format=3 uid="uid://dc0upxl0xipa7"]
 
 [ext_resource type="Script" path="res://SCRIPTS/snail.gd" id="1_lq6w6"]
 [ext_resource type="Texture2D" uid="uid://bkwevqtgn4oe2" path="res://ASSETS/Art/snail/SnailSpriteSheets.png" id="1_subfa"]
@@ -166,6 +166,9 @@ stream_1/stream = ExtResource("5_e3ec6")
 stream_2/stream = ExtResource("6_bn3eh")
 stream_3/stream = ExtResource("7_m7htx")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bk5x"]
+bg_color = Color(0.760115, 0, 0.0138994, 1)
+
 [node name="Snail" type="StaticBody2D" groups=["Objective"]]
 y_sort_enabled = true
 collision_layer = 9
@@ -198,3 +201,16 @@ pitch_scale = 2.0
 stream = ExtResource("7_m7htx")
 volume_db = -5.0
 pitch_scale = 0.5
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(80, 0)
+offset_left = -40.0
+offset_top = -50.0
+offset_right = 40.0
+offset_bottom = -42.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_3bk5x")
+max_value = 10.0
+step = 1.0
+value = 10.0
+rounded = true
+show_percentage = false
