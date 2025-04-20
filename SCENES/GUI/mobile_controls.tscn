@@ -44,24 +44,14 @@ script = ExtResource("1_qatij")
 [node name="Joystick" parent="." instance=ExtResource("1_x3fcn")]
 position = Vector2(80, 280)
 
-[node name="BlastButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 544.0
-offset_top = 280.0
-offset_right = 608.0
-offset_bottom = 344.0
+[node name="BlastButton" type="TouchScreenButton" parent="."]
+position = Vector2(560, 280)
 texture_normal = SubResource("AtlasTexture_dwxfs")
 texture_pressed = SubResource("AtlasTexture_8f7xx")
+action = "blast"
 
-[node name="ClamButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 544.0
-offset_top = 200.0
-offset_right = 608.0
-offset_bottom = 264.0
+[node name="ClamButton" type="TouchScreenButton" parent="."]
+position = Vector2(560, 200)
 texture_normal = SubResource("AtlasTexture_g55o3")
 texture_pressed = SubResource("AtlasTexture_2mjog")
-
-[connection signal="pressed" from="BlastButton" to="." method="_on_blast_button_pressed"]
-[connection signal="button_down" from="ClamButton" to="." method="_on_clam_button_button_down"]
-[connection signal="button_up" from="ClamButton" to="." method="_on_clam_button_button_up"]
+action = "tower"
