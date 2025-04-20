@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://rb0fuewtvoel" path="res://ASSETS/Art/BGtileset/BackgroundTileset.png" id="3_nbyho"]
 [ext_resource type="Texture2D" uid="uid://bkwevqtgn4oe2" path="res://ASSETS/Art/snail/SnailSpriteSheets.png" id="4_47vxr"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3bwv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qu1j8"]
 texture = ExtResource("3_nbyho")
 0:0/0 = 0
 1:0/0 = 0
@@ -154,7 +154,7 @@ texture = ExtResource("3_nbyho")
 11:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_okgh1"]
-sources/0 = SubResource("TileSetAtlasSource_c3bwv")
+sources/0 = SubResource("TileSetAtlasSource_qu1j8")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3du4"]
 atlas = ExtResource("4_47vxr")
@@ -298,19 +298,19 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
+[node name="NextButton" type="Button" parent="MenuContent/MenuButtons"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("1_mm3s4")
+text = "Next Round"
+
 [node name="MainMenuButton" type="Button" parent="MenuContent/MenuButtons"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("1_mm3s4")
 text = "Main Menu"
-
-[node name="RestartButton" type="Button" parent="MenuContent/MenuButtons"]
-custom_minimum_size = Vector2(100, 20)
-layout_mode = 2
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = ExtResource("1_mm3s4")
-text = "Restart Level"
 
 [node name="QuitButton" type="Button" parent="MenuContent/MenuButtons"]
 custom_minimum_size = Vector2(100, 20)
@@ -341,6 +341,6 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ubtal")
 autoplay = "default"
 
+[connection signal="pressed" from="MenuContent/MenuButtons/NextButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="MenuContent/MenuButtons/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]

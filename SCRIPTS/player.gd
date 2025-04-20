@@ -6,11 +6,15 @@ const JUMP_VELOCITY = -400.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var blast_cooldown: Timer = $BlastCooldown
 @onready var attack_range: TextureProgressBar = $AttackRange
+@onready var player: CharacterBody2D = $"."
 
 @export var blast_scene: PackedScene
 @export var tower_scene: PackedScene
 @export var towers_to_place = 1
 var placing_tower: Node2D
+
+func _ready() -> void:
+	towers_to_place *= Globals.round
 
 func _physics_process(delta: float) -> void:
 	attack_range.value = blast_cooldown.wait_time - blast_cooldown.time_left

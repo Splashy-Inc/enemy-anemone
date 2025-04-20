@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsa1pio43cai0"]
+[gd_scene load_steps=15 format=3 uid="uid://bsa1pio43cai0"]
 
 [ext_resource type="Script" path="res://SCRIPTS/clam.gd" id="1_j5dn6"]
 [ext_resource type="Texture2D" uid="uid://dkq5gidklwrqd" path="res://ASSETS/Art/clam/Clam.png" id="1_kwr1j"]
+[ext_resource type="PackedScene" uid="uid://tajnjj2x3pty" path="res://SCENES/pearl.tscn" id="2_ud4y2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g78g5"]
 atlas = ExtResource("1_kwr1j")
@@ -119,6 +120,7 @@ _data = {
 
 [node name="Clam" type="CharacterBody2D"]
 script = ExtResource("1_j5dn6")
+pearl_scene = ExtResource("2_ud4y2")
 placing_modulate = Color(1, 1, 1, 0.470588)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
