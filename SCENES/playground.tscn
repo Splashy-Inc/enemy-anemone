@@ -183,9 +183,9 @@ b = Vector2(0, 0)
 
 [sub_resource type="Curve2D" id="Curve2D_rpwnk"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1025, 0, 0, 0, 0, 0, 1025, 1025, 0, 0, 0, 0, 0, 1025)
+"points": PackedVector2Array(0, 0, 0, 0, 1025, 0, 0, 0, 0, 0, 1025, 1025, 0, 0, 0, 0, 0, 1025, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1025, 0)
 }
-point_count = 3
+point_count = 5
 
 [node name="Playground" type="Node"]
 script = ExtResource("1_5e8d0")
