@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://rb0fuewtvoel" path="res://ASSETS/Art/BGtileset/BackgroundTileset.png" id="3_nbyho"]
 [ext_resource type="Texture2D" uid="uid://bkwevqtgn4oe2" path="res://ASSETS/Art/snail/SnailSpriteSheets.png" id="4_47vxr"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3bwv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qu1j8"]
 texture = ExtResource("3_nbyho")
 0:0/0 = 0
 1:0/0 = 0
@@ -154,7 +154,7 @@ texture = ExtResource("3_nbyho")
 11:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_okgh1"]
-sources/0 = SubResource("TileSetAtlasSource_c3bwv")
+sources/0 = SubResource("TileSetAtlasSource_qu1j8")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3du4"]
 atlas = ExtResource("4_47vxr")
