@@ -51,7 +51,7 @@ func hide_menu_screens():
 	cur_menu = Menus.NONE
 	_clear_menu()
 	menu_screens.hide()
-	if OS.has_feature("mobile"):
+	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		mobile_controls.show()
 
 func _on_controls_screen_exited():
