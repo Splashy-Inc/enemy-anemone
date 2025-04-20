@@ -135,6 +135,7 @@ _data = {
 }
 
 [node name="Clam" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_j5dn6")
 pearl_scene = ExtResource("2_ud4y2")
 placing_modulate = Color(1, 1, 1, 0.470588)
