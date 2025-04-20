@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dwambsmbbkw81"
+path="res://.godot/imported/16-Bit RGP Music Ice Lands _Clement Panchout.ogg-a11b123c2203f8d74c23921c5f31e0e3.oggvorbisstr"
+
+[deps]
+
+source_file="res://ASSETS/Audio/16-Bit RGP Music Ice Lands _Clement Panchout.ogg"
+dest_files=["res://.godot/imported/16-Bit RGP Music Ice Lands _Clement Panchout.ogg-a11b123c2203f8d74c23921c5f31e0e3.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

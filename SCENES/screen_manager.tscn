@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxq56d6rma7gn"]
+[gd_scene load_steps=5 format=3 uid="uid://bxq56d6rma7gn"]
 
 [ext_resource type="Script" path="res://SCRIPTS/screen_manager.gd" id="1_7yicb"]
 [ext_resource type="PackedScene" uid="uid://do7dpbgd6ku6n" path="res://SCENES/GUI/hud.tscn" id="2_3khgq"]
 [ext_resource type="PackedScene" uid="uid://dhvgc0glasyim" path="res://SCENES/playground.tscn" id="2_ovxmg"]
+[ext_resource type="AudioStream" uid="uid://dwambsmbbkw81" path="res://ASSETS/Audio/16-Bit RGP Music Ice Lands _Clement Panchout.ogg" id="4_u1syr"]
 
 [node name="ScreenManager" type="Node"]
 process_mode = 3
@@ -10,6 +11,11 @@ script = ExtResource("1_7yicb")
 level_scene = ExtResource("2_ovxmg")
 
 [node name="HUD" parent="." instance=ExtResource("2_3khgq")]
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_u1syr")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="main_menu_pressed" from="HUD" to="." method="_on_main_menu_pressed"]
 [connection signal="play_pressed" from="HUD" to="." method="_on_play_pressed"]
