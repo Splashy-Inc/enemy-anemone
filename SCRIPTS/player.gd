@@ -20,6 +20,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	attack_range.value = blast_cooldown.wait_time - blast_cooldown.time_left
 	var direction := Input.get_vector("left", "right", "up", "down").normalized()
+	if direction == Vector2.ZERO and Globals.joystick:
+		direction = Globals.joystick.posVector
 	if direction:
 		if direction.x < 0:
 			animation_player.play("move")
