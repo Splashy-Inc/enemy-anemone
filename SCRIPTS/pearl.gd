@@ -16,7 +16,12 @@ func _process(delta: float) -> void:
 
 func fire(new_target: Node2D):
 	target = new_target
+	target.died.connect(_on_target_died)
 
 func _on_body_entered(body: Node2D) -> void:
 	body.on_hit(1)
+	queue_free()
+
+func _on_target_died():
+	target = null
 	queue_free()

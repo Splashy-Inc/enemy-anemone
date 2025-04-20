@@ -356,4 +356,5 @@ position = Vector2(87, 354)
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="died" from="GamePieces/Snail" to="." method="_on_snail_died"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

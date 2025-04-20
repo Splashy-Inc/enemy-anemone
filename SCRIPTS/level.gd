@@ -12,6 +12,8 @@ func _ready() -> void:
 	
 	for objective in get_tree().get_nodes_in_group("Objective"):
 		objective.died.connect(_on_objective_died)
+	
+	_level_ready()
 
 func _process(delta: float) -> void:
 	pass
@@ -30,3 +32,6 @@ func pause_play(mouse_mode: int = Input.MOUSE_MODE_VISIBLE):
 
 func _on_objective_died():
 	lost.emit()
+
+func _level_ready():
+	pass

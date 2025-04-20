@@ -13,6 +13,9 @@ const JUMP_VELOCITY = -400.0
 @export var towers_to_place = 1
 var placing_tower: Node2D
 
+func _ready() -> void:
+	towers_to_place *= Globals.round
+
 func _physics_process(delta: float) -> void:
 	attack_range.value = blast_cooldown.wait_time - blast_cooldown.time_left
 	var direction := Input.get_vector("left", "right", "up", "down").normalized()

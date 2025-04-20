@@ -33,6 +33,7 @@ func show_main_menu():
 	if level:
 		level.queue_free()
 		level = null
+	Globals.round = 1
 	hud.show_main_menu()
 
 func toggle_pause_menu():
@@ -88,6 +89,7 @@ func _on_level_lost():
 
 func _on_level_won():
 	game_ended = true
+	Globals.round += 1
 	hud.show_win_screen()
 
 func _on_level_selected(new_level_scene: PackedScene):
