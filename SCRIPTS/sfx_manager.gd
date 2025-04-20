@@ -20,5 +20,5 @@ func play(sound_name: String):
 
 func stop():
 	for child in get_children():
-		if child is AudioStreamPlayer:
+		if child is AudioStreamPlayer or child is AudioStreamPlayer2D:
 			child.stop()
