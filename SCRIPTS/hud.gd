@@ -6,6 +6,7 @@ signal play_pressed
 signal restart_pressed
 signal quit_pressed
 signal main_menu_pressed
+signal pause_pressed
 
 @onready var menu_screens: Control = $MenuScreens
 @onready var menu_back_ground: ColorRect = $MenuScreens/MenuBackGround
@@ -15,6 +16,7 @@ signal main_menu_pressed
 @onready var loss_screen: Control = $MenuScreens/LossScreen
 @onready var pause_menu: Control = $MenuScreens/PauseMenu
 @onready var mobile_controls: Control = $MobileControls
+@onready var level_ui: Control = $LevelUI
 
 enum Menus {
 	NONE,
@@ -44,6 +46,7 @@ func _clear_menu():
 
 func show_menu_screens():
 	menu_screens.show()
+	level_ui.hide()
 	if mobile_controls.visible:
 		mobile_controls.hide()
 
@@ -51,6 +54,7 @@ func hide_menu_screens():
 	cur_menu = Menus.NONE
 	_clear_menu()
 	menu_screens.hide()
+	level_ui.show()
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		mobile_controls.show()
 
@@ -107,3 +111,6 @@ func _on_game_menu_button_pressed(type: String):
 			main_menu_pressed.emit()
 		"Quit":
 			quit_pressed.emit()
+
+func _on_pause_button_pressed() -> void:
+	pause_pressed.emit()

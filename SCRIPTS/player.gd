@@ -42,6 +42,8 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("blast"):
+		if (OS.has_feature("web_android") or OS.has_feature("web_ios")) and event is InputEventMouse:
+			return
 		blast_attack()
 	elif event.is_action_pressed("tower") and towers_to_place > 0:
 		_spawn_tower()

@@ -32,6 +32,5 @@ func calculateVector():
 func _on_button_button_down() -> void:
 	pressing = true
 
-
 func _on_button_button_up() -> void:
 	pressing = false
